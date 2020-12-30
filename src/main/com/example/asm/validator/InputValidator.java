@@ -1,5 +1,6 @@
 package main.com.example.asm.validator;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class InputValidator {
@@ -20,6 +21,10 @@ public class InputValidator {
                 return false;
             }
         }
+        if (isAllEqual(parameters)) {
+            System.out.println("Start Point & End Point must not be the same");
+            return false;
+        }
         return true;
     }
 
@@ -33,5 +38,20 @@ public class InputValidator {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    public static boolean isAllEqual(String[] s){
+        try {
+            int[] a = Arrays.stream(s).mapToInt(Integer::parseInt).toArray();
+            for(int i=1; i<a.length; i++){
+                if(a[0] != a[i]){
+                    return false;
+                }
+            }
+        } catch (Exception e) {
+            return false;
+        }
+
+        return true;
     }
 }

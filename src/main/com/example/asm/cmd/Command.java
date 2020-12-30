@@ -14,4 +14,8 @@ public abstract class Command {
     }
 
     public abstract void execute(String[] parameters);
+
+    public String getErrMessage() {
+        return "Cannot execute command due to some err or invalid params";
+    }
 }
