@@ -16,7 +16,7 @@ public class InputValidator {
         }
         for (String param : parameters) {
             if (!isPositiveInteger(param) && !isColor(parameters, cmd, param)) {
-                System.out.println("Parameter (" + param + ") is not an positive integer");
+                System.out.println("Parameter (" + param + ") is not a positive integer");
                 return false;
             }
         }
